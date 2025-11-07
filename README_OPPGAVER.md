@@ -173,19 +173,18 @@ I repositoryet finner du en GitHub Actions workflow i `.github/workflows/sam-dep
 Den deployer til AWS på **hver eneste pull request**, I tillegg mangler den viktige steg, og hardkoder verdier burde være mulig å overstyre
 Du skal nå endre på denne GitHub actions workflowen;
 
+#### Installere SAM i CodeSpaces
+
+```bash
+wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+sudo ./sam-installation/install
+```
+
 **SAM CLI kommandoer du skal bruke:**
 - `sam validate` - Validerer template syntax
 - `sam build` - Bygger applikasjonen
 - `sam deploy` - Deployer til AWS
-
-
-
-#### Installere SAM
-
-````ash
-wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
-unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
-sudo ./sam-installation/install
 
 **Krav til løsningen:**
 
