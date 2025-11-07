@@ -419,6 +419,8 @@ Du skal implementere Infrastructure as Code (IaC) ved hjelp av Terraform for å 
 
 #### Krav til infrastrukturen
 
+**NB:** For denne oppgaven skal du **IKKE** lage noen GitHub Actions workflow eller CI/CD-pipeline. Terraform-koden skal kjøres manuelt lokalt.
+
 **1. Mappestruktur**: Opprett mappen `infra-cloudwatch/` i repositoriet for all Terraform-kode knyttet til observabilitetsinfrastruktur.
 
 **2. Terraform-ressurser**: Implementer følgende komponenter som kode:
@@ -438,8 +440,6 @@ eksempel vises med NumberWidget.
 **4. Alarm Terskelverdi**: Terskelverdier skal defineres basert på systemets normale oppførsel og krav til ytelse. Dokumenter begrunnelsen for de verdiene du velger.
 
 **5. Deployment**: Deploy infrastrukturen manuelt med terraform.
-
-**NB:** For denne oppgaven skal du **IKKE** lage noen GitHub Actions workflow eller CI/CD-pipeline. Terraform-koden skal kjøres manuelt lokalt.
 
 **6. Validering**: Test at alarmen fungerer ved å finne en måte å trigge alarmen på.
 
