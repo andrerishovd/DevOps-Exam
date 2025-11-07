@@ -402,7 +402,6 @@ Implementasjonen skal vise at du forstår når de ulike metrikktypene er relevan
 
 - Se på den eksisterende Counter-implementasjonen som mal
 - Les TODO-kommentarene i `SentimentMetrics.java` for forslag til metrikker
-- Konfigurer CloudWatch-eksport i `application.properties` (se kommentarer i filen)
 
 #### Leveranser
 
@@ -444,7 +443,6 @@ eksempel vises med NumberWidget.
 
 #### Tekniske merknader
 
-- CloudWatch Agent publiserer custom metrics til namespace "CWAgent"
 - Det kan ta noen minutter før metrikker vises i CloudWatch
 - SNS e-post-subscription må bekreftes via lenke i e-posten du mottar
 
