@@ -361,6 +361,8 @@ Spring Boot-applikasjonen (`sentiment-docker/`) er allerede konfigurert med Spri
 
 Micrometer CloudWatch Registry er allerede inkludert som avhengighet i `pom.xml`. I `SentimentMetrics.java` finner du et eksempel på implementering av en `Counter`-metrikk som demonstrerer bruk av `MeterRegistry`.
 
+- **viktig** du må endre MetricsConfig klassen og sette inn ditt egent kandidatnavn i linjen  `"cloudwatch.namespace", "SentimentApp"`
+
 Studer implementasjonen i `sentiment-docker/src/main/java/com/aialpha/sentiment/metrics/SentimentMetrics.java`, som demonstrerer:
 - Dependency injection av `MeterRegistry` via konstruktør
 - Bruk av builder-pattern for å konstruere metrikker (`Counter.builder()`)
