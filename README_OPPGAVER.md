@@ -144,8 +144,7 @@ Den eksisterende SAM-applikasjonen i `sam-comprehend/` bruker Amazon Comprehend 
 
 **Oppgave:**
 1. Utforsk SAM-applikasjonen i `sam-comprehend/` mappen
-2. Endre applikasjonen slik at den lagrer data i S3 bucket du lagde i oppgave 1
-   - **Viktig:** Du må endre `S3BucketName` parameter i `template.yaml` til å peke på bucketen du opprettet i Oppgave 1, eller sende inn riktig bucket-navn som parameter ved `sam deploy --guided`
+2. Endre applikasjonen slik at den lagrer data i S3 bucket du lagde i oppgave 1 ved å endre `S3BucketName` parameter i `template.yaml` til å peke på bucketen du opprettet.
 3. Kjør applikasjonen lokalt med `sam local invoke` eller `sam local start-api`
 4. Deploy applikasjonen til AWS med `sam deploy --guided`
 5. Test deployed endepunkt med curl eller Postman
