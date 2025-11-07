@@ -410,6 +410,7 @@ Implementasjonen skal vise at du forstår når de ulike metrikktypene er relevan
 - **Teknisk forklaring**: Beskriv designvalgene dine, og forklar hvorfor du valgte spesifikke instrumenttyper for de ulike målingene
 
 ### Del B (10 poeng): Infrastruktur for Visualisering og Alarmering
+**NB:** For denne oppgaven skal du **IKKE** lage noen GitHub Actions workflow eller CI/CD-pipeline. Terraform-koden skal kjøres manuelt lokalt.
 
 #### Oppgave
 
@@ -418,8 +419,6 @@ Du skal implementere Infrastructure as Code (IaC) ved hjelp av Terraform for å 
 2. Minst én CloudWatch Alarm med e-postvarsling via Amazon SNS
 
 #### Krav til infrastrukturen
-
-**NB:** For denne oppgaven skal du **IKKE** lage noen GitHub Actions workflow eller CI/CD-pipeline. Terraform-koden skal kjøres manuelt lokalt.
 
 **1. Mappestruktur**: Opprett mappen `infra-cloudwatch/` i repositoriet for all Terraform-kode knyttet til observabilitetsinfrastruktur.
 
