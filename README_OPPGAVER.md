@@ -253,9 +253,9 @@ I mappen `sentiment-docker/` finner du en Spring Boot-applikasjon som:
 export AWS_ACCESS_KEY_ID=your-key
 export AWS_SECRET_ACCESS_KEY=your-secret
 export S3_BUCKET_NAME=<din bucket>
+```
 
 # Bygg og kjør med Maven
-
 ```
 mvn spring-boot:run
 ```
