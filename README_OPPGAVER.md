@@ -255,7 +255,7 @@ export AWS_SECRET_ACCESS_KEY=your-secret
 export S3_BUCKET_NAME=<din bucket>
 ```
 
-# Bygg og kjør med Maven
+#### Bygg og kjør med Maven
 ```
 mvn spring-boot:run
 ```
