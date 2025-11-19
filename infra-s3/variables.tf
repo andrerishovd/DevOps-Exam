@@ -1,11 +1,13 @@
 variable "aws_region" {
   description = "AWS region"
   type        = string
+  default = "eu-west-1"
 }
 
 variable "analysis_bucket_name" {
-  description = "Navn på s3 bucket" #analysis-bucket-candidate-34
+  description = "Navn på s3 bucket"
   type        = string
+  default = kandidat-34-data
 }
 
 variable "prefix_midlertidig" {
