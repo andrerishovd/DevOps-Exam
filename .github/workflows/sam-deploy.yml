@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      STACK_NAME: aialpha-sentiment-kandidat-34-v2
+      STACK_NAME: aialpha-sentiment-kandidat-34-v3
       AWS_REGION: eu-west-1
       S3_BUCKET_NAME: kandidat-34-data
 
@@ -54,7 +54,8 @@ jobs:
 
       - name: SAM Build
         working-directory: ./sam-comprehend
-        run: sam build
+        run: sam build --use-container --template-file sam-comprehend/template.yaml
+
 
       - name: Deploy SAM application
         if: ${{ github.event_name == 'push' }} #Only deploy to AWS on push to main
