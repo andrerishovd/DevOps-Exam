@@ -54,7 +54,7 @@ jobs:
 
       - name: SAM Build
         working-directory: ./sam-comprehend
-        run: sam build --use-container --template-file sam-comprehend/template.yaml
+        run: sam build --use-container --template-file template.yaml
 
 
       - name: Deploy SAM application
