@@ -6,12 +6,12 @@ on:
       - main
     paths:
       - 'sam-comprehend/**'
-      - '.github/**'
+      - '.github/workflows/sam-deploy.yml'
 
   pull_request:
     paths:
       - 'sam-comprehend/**'
-      - '.github/**'
+      - '.github/workflows/sam-deploy.yml'
 
 jobs:
   deploy:
