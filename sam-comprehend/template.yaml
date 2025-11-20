@@ -47,3 +47,5 @@ Outputs:
   SentimentAnalysisFunction:
     Description: "Sentiment Analysis Lambda Function ARN"
     Value: !GetAtt SentimentAnalysisFunction.Arn
+
+#New line for test commit
