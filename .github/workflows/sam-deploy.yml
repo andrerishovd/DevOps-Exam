@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      STACK_NAME: aialpha-sentiment-kandidat-34-v3
+      STACK_NAME: aialpha-sentiment-kandidat-34-v4
       AWS_REGION: eu-west-1
       S3_BUCKET_NAME: kandidat-34-data
 
