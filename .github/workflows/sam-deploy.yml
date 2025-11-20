@@ -20,6 +20,7 @@ jobs:
     env:
       STACK_NAME: aialpha-sentiment-kandidat-34
       AWS_REGION: eu-west-1
+      S3_BUCKET_NAME: kandidat-34-data
 
     steps:
       - name: Checkout code
@@ -61,5 +62,6 @@ jobs:
         run: |
           sam deploy \
             --stack-name ${{ env.STACK_NAME }} \
+            --s3-bucket ${{ env.S3_BUCKET_NAME }}
             --no-confirm-changeset \
             --no-fail-on-empty-changeset
