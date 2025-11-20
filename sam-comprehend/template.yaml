@@ -3,6 +3,8 @@ Transform: AWS::Serverless-2016-10-31
 Description: AiAlpha Sentiment Analysis with Amazon Comprehend
 
 Globals:
+  Api:
+    EndpointConfiguration: REGIONAL #Added after aws said limit of 120 EDGE apis 
   Function:
     Timeout: 30
     MemorySize: 256
