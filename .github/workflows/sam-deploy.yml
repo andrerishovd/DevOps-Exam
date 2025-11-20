@@ -32,7 +32,6 @@ jobs:
           python-version: '3.11'
 
       - name: Configure AWS credentials
-        if: ${{ github.event_name == 'push' }} #Only configure credentials on push to main
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
