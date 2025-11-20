@@ -31,15 +31,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      #- name: Wget SAM
-      #  run: wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
-      #  
-      #- name: Unzip SAM  
-      #  run: unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
-      #  
-      #- name: Install SAM  
-      #  run: sudo ./sam-installation/install --update
-
       - name: Configure AWS credentials
         if: ${{ github.event_name == 'push' }} #Only configure credentials on push to main
         uses: aws-actions/configure-aws-credentials@v2
