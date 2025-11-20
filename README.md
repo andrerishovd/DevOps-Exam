@@ -57,6 +57,8 @@ Ved tekniske problemer med miljø under eksamen, kontakt lærer. Du står naturl
 - Oppgave 2. 25 Poeng. AWS Lambda, SAM og GitHub Actions
 - Oppgave 3. 25 Poeng. Containere og Docker
 - Oppgave 4. 25 Poeng. Metrics, Observability og CloudWatch
+
+#test for pr
 - Oppgave 5. 10 Poeng. Drøfteoppgave - DevOps-prinsipper
 - 
 **Eksamensoppgaven, kode og nødvendige filer er tilgjengelig i GitHub-repoet:**
