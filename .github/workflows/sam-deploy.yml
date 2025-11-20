@@ -6,15 +6,20 @@ on:
       - main
     paths:
       - 'sam-comprehend/**'
+      - '.github/**'
+
   pull_request:
-    branches:
-      - main
     paths:
       - 'sam-comprehend/**'
+      - '.github/**'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    env:
+      STACK_NAME: aialpha-sentiment-kandidat-34
+      AWS_REGION: eu-west-1
 
     steps:
       - name: Checkout code
@@ -25,20 +30,32 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Set up SAM CLI
-        uses: aws-actions/setup-sam@v2
+      - name: Install SAM
+        run: wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+        run: unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+        run: sudo ./sam-installation/install
 
       - name: Configure AWS credentials
+        if: ${{ github.event_name == 'push' }} #Only configure credentials on push to main
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-1
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: SAM Validate
+        working-directory: ./sam-comprehend
+        run: sam validate
+
+      - name: SAM Build
+        working-directory: ./sam-comprehend
+        run: sam build
 
       - name: Deploy SAM application
+        if: ${{ github.event_name == 'push' }} #Only deploy to AWS on push to main
         working-directory: ./sam-comprehend
         run: |
           sam deploy \
-            --stack-name aialpha-sentiment-glennbech \
+            --stack-name ${{ env.STACK_NAME }} \
             --no-confirm-changeset \
             --no-fail-on-empty-changeset
