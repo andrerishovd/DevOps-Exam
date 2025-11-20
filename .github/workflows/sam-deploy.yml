@@ -63,6 +63,6 @@ jobs:
           sam deploy \
             --stack-name ${{ env.STACK_NAME }} \
             --s3-bucket ${{ env.S3_BUCKET_NAME }} \
-            --capabilities CAPABILITY_IAM \ 
+            --capabilities CAPABILITY_IAM \
             --no-confirm-changeset \
             --no-fail-on-empty-changeset
