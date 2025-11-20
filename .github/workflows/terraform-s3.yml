@@ -48,9 +48,9 @@ jobs:
               run: terraform validate
 
             - name: Terraform plan
-              if: github.event_name == 'pull_request'
+              if: ${{ github.event_name == 'pull_request' }} # Use plan on pull
               run: terraform plan -input=false
 
             - name: Terraform apply
-              if: github.ref == 'refs/heads/main'
+              if: ${{ github.event_name == 'push' }} # Use apply on push
               run: terraform apply -auto-approve -input=false
