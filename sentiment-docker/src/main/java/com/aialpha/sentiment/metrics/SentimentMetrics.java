@@ -2,6 +2,8 @@ package com.aialpha.sentiment.metrics;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.Timer;
+
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
