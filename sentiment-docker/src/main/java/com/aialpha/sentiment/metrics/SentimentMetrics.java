@@ -2,16 +2,23 @@ package com.aialpha.sentiment.metrics;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Counter;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class SentimentMetrics {
 
     private final MeterRegistry meterRegistry;
+    private final AtomicInteger companiesGauge = new AtomicInteger(0);
 
     // Constructor injection of MeterRegistry
     public SentimentMetrics(MeterRegistry meterRegistry) {
         this.meterRegistry = meterRegistry;
+
+        meterRegistry.gauge("sentiment.companies.detected", companiesGauge);
     }
 
     /**
@@ -28,11 +35,16 @@ public class SentimentMetrics {
     }
 
     public void recordDuration(long milliseconds, String company, String model) {
-        // TODO: Record timer
+        Timer.builder("sentiment.analysis.duration")
+                .tag("company", company)
+                .tag("model", model)
+                .description("Duration of an analysis for a company")
+                .register(meterRegistry)
+                .record(milliseconds, TimeUnit.MILLISECONDS);
     }
 
     public void recordCompaniesDetected(int count) {
-        // TODO: Update gauge
+        companiesGauge.set(count);
     }
 
     public void recordConfidence(double confidence, String sentiment, String company) {
