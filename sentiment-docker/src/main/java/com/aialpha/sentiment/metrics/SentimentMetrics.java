@@ -47,7 +47,9 @@ public class SentimentMetrics {
         companiesGauge.set(count);
     }
 
+    
     public void recordConfidence(double confidence, String sentiment, String company) {
-        // TODO: Record distribution summary
+
     }
+    
 }
