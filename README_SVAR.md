@@ -1,6 +1,6 @@
 Eksamen DevOps – Kandidat 34 
 
-Skrev opprinnelig i word og lagde besvarelse.pdf, den har bilder som mangler i README.
+Skrev opprinnelig i word og lagde besvarelse.pdf, den har bilder som mangler i README_SVAR.md.
 Tekstinnholdet fra oppgavene er uendret, anbefaler å lese den.
 
 
