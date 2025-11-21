@@ -2,3 +2,4 @@ infra-s3/.terraform/
 sam-comprehend/sam-installation
 sam-comprehend/samconfig.toml
 
+sentiment-docker/target
