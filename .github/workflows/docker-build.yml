@@ -10,10 +10,6 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
 
-        env:
-            DOCKER_IMAGE_NAME: sentiment-docker
-            WORKING_DIRECTORY: sentiment-docker
-
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
