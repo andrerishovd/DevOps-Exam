@@ -9,10 +9,10 @@ resource "aws_sns_topic_subscription" "email" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "high_latency" {
-    alarm_name = "sentiment-high-latency"
+    alarm_name = var.high_latency_alarm_name
     alarm_description = "Alarm if average analysis latency in the last minute was over accepted threshhold"
     namespace = var.cloudwatch_namespace
-    metric_name = "sentiment.analysis.duration"
+    metric_name = "sentiment.analysis.duration.value"
     statistic = "Average"
     period = var.high_latency_period
     evaluation_periods = var.evaluation_periods
@@ -30,7 +30,7 @@ resource "aws_cloudwatch_metric_alarm" "high_latency" {
 }
 
 resource "aws_cloudwatch_dashboard" "sentiment_dashboard" {
-  dashboard_name = "sentiment-dashboard"
+  dashboard_name = var.dashboard_name
 
   dashboard_body = jsonencode({
     start          = "-15 minutes"
@@ -48,7 +48,7 @@ resource "aws_cloudwatch_dashboard" "sentiment_dashboard" {
           "region" : var.aws_region,
           "title" : "Sentiment Analysis Duration (Average, seconds)",
           "metrics" : [
-            [ var.cloudwatch_namespace, "sentiment.analysis.duration" ]
+            [ var.cloudwatch_namespace, "sentiment.analysis.duration.avg", "company", "*", "model", "*"]
           ],
           "stat" : "Average"
         }
@@ -66,7 +66,7 @@ resource "aws_cloudwatch_dashboard" "sentiment_dashboard" {
           "region" : var.aws_region,
           "title" : "Companies Detected",
           "metrics" : [
-            [ var.cloudwatch_namespace, "sentiment.companies.detected" ]
+            [ var.cloudwatch_namespace, "sentiment.companies.detected.value" ]
           ],
           "stat" : "Average"
         }

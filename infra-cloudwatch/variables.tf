@@ -4,6 +4,12 @@ variable "alarm_email" {
     default = "andre44@live.no"
 }
 
+variable "high_latency_alarm_name" {
+    description = "alarmnavn med kandidatnumer"
+    type = string 
+    default = "kandidat-34-high-latency-alarm"
+}
+
 variable "cloudwatch_namespace" {
     description = "MÅ være samme som i MetricsConfigure"
     type = string
@@ -25,5 +31,17 @@ variable "evaluation_periods" {
 variable "latency_threshold" {
     description = "alarmtrigger for latency"
     type = number
-    default = 5
+    default = 0.5
+}
+
+variable "aws_region" {
+    description = "AWS region"
+    type = string
+    default = "eu-west-1"
+}
+
+variable "dashboard_name" {
+    description = "name with candidate number for dashboard"
+    type = string
+    default = "kandidat-34-dashboard"
 }
